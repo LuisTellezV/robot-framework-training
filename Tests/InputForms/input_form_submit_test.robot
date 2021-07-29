@@ -20,6 +20,7 @@ ${TEST_DATA_PATH} =    InputForms\\InputFormSubmit
 Test Demo Name
     SeleniumApp.Navigate to "Selenium Easy Test" landing page
     LandingPage.Close Automation Message PopUp
-    LandingPage.Validate PopUp Appears
-    LandingPage.Go to Input Forms
+    LandingPage.Validate Page Loaded
+    LandingPage.Click on Input Forms from dropdown
+    LandingPage.Click on Input Form Submit option
     InputFormSubmit.Validate "Input Form Submit" page loaded

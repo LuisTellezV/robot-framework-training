@@ -2,7 +2,6 @@
 Library  SeleniumLibrary
 Resource    ../Data/InputData.robot
 Resource    ../Resources/DataManager.robot
-Library    ../CustomLibs/pdf_report_code.py
 
 *** Variables ***
 &{TEST_DATA_CREATION}

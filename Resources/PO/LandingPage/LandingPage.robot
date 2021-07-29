@@ -1,10 +1,11 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    /PO/LandingPage/DropDown.robot
 
 *** Variables ***
 ${SITE_NAME_ELEMENT} =    id:site-name
 ${CLOSE_AUTOMATION_POPUP_BTN} =    id:at-cv-lightbox-close
+${INPUT_FORMS_OPTION} =    xpath:(//li/a[contains(text(), 'Input Forms')])[1]
+${INPUT_FORM_SUBMIT_SECTION} =    link:Input Form Submit
 
 *** Keywords ***
 Navigate To
@@ -20,6 +21,8 @@ Validate Page Loaded
 Validate PopUp Appears
     wait until element is visible    ${CLOSE_AUTOMATION_POPUP_BTN}
 
-Go to Input Forms
-    DropDown.Click on dropdown menu element    input_forms
-    DropDown.Click Input Forms option    input_form_submit
+Click on Input Forms from dropdown
+    click element    ${INPUT_FORMS_OPTION}
+
+Click on Input Form Submit option
+    click link    ${INPUT_FORM_SUBMIT_SECTION}
