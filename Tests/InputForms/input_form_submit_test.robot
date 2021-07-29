@@ -28,6 +28,8 @@ IFS_001 - Validate all fields are filled with String values - PostiveTestCase
     LandingPage.Click on Input Form Submit option
     InputFormSubmit.Validate "Input Form Submit" page loaded
 
+    sleep    5s
+
 
 IFS_002 - Validate Please Supply your First Name error is displayed
     [Documentation]    Validate that when user doesn't provide a first name in Input Form Submit
