@@ -33,8 +33,6 @@ IFS_002 - Validate Please Supply your First Name error is displayed
     [Documentation]    Validate that when user doesn't provide a first name in Input Form Submit
     ...    Demo, the error "Please Supply your first name" is displayed below "First Name" field.
 
-    CommonWeb.Get Test Data    ${TEST_DATA_PATH}
-
     SeleniumApp.Navigate to "Selenium Easy Test" landing page
     LandingPage.Close Automation Message PopUp
     LandingPage.Validate Page Loaded

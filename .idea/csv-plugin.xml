@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Data\InputForms\InputFormSubmit\IFS_001 - Validate all fields are filled with String values - PostiveTestCase.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Data\InputForms\InputFormSubmit\IFS_001_-_DynamicForm_-_Validate_submitting_multiple_input_forms_with_all_fields.csv">
           <value>
             <Attribute>
@@ -39,6 +46,13 @@
           </value>
         </entry>
         <entry key="\Data\InputForms\InputFormSubmit\IFS_003_-_NegativeTestCase_-_Validate_all_error_messages_from_input_forms_when_by_not_inserting_text_on_fields.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Data\InputForms\InputFormSubmit\existing_file.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
