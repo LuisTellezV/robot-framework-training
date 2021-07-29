@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.2 (Python 3.8.6 on win32)" generated="20210729 10:46:02.860" rpa="false" schemaversion="2">
+<suite id="s1" name="Input Form Submit Test" source="C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\tests\inputforms\input_form_submit_test.robot">
+<test id="s1-t1" name="IFS_001 - DynamicForm - Validate submitting multiple input forms with all fields">
+<kw name="Begin Web Test" library="CommonWeb" type="SETUP">
+<doc>This Keyword help us setup all our test cases dynamically</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210729 10:46:03.096" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210729 10:46:03.096" endtime="20210729 10:46:06.676"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210729 10:46:06.677" endtime="20210729 10:46:06.807"/>
+</kw>
+<status status="PASS" starttime="20210729 10:46:03.095" endtime="20210729 10:46:06.808"/>
+</kw>
+<kw name="Navigate to &quot;Selenium Easy Test&quot; landing page" library="SeleniumApp">
+<doc>This Keyword reaches our Landing Page, closes the PopUp That Appears whenever it enters	o the site</doc>
+<kw name="Navigate To" library="LandingPage">
+<arg>${BASE_URL}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210729 10:46:06.812" level="INFO">Opening url 'https://www.seleniumeasy.com/test/'</msg>
+<status status="PASS" starttime="20210729 10:46:06.812" endtime="20210729 10:46:09.086"/>
+</kw>
+<status status="PASS" starttime="20210729 10:46:06.810" endtime="20210729 10:46:09.086"/>
+</kw>
+<kw name="Verify PopUp Appears" library="LandingPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CLOSE_AUTOMATION_POPUP_BTN}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210729 10:46:09.087" endtime="20210729 10:46:10.269"/>
+</kw>
+<status status="PASS" starttime="20210729 10:46:09.086" endtime="20210729 10:46:10.270"/>
+</kw>
+<status status="PASS" starttime="20210729 10:46:06.809" endtime="20210729 10:46:10.270"/>
+</kw>
+<kw name="Close Automation Message PopUp" library="SeleniumApp">
+<doc>This Keyword implements the action of closing the PopUp That Appears when
+we enter to selenium test site. In order to see the main page.</doc>
+<kw name="Close Automation Message PopUp" library="LandingPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_AUTOMATION_POPUP_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210729 10:46:10.271" level="INFO">Clicking element 'id:at-cv-lightbox-close'.</msg>
+<status status="PASS" starttime="20210729 10:46:10.271" endtime="20210729 10:46:10.308"/>
+</kw>
+<status status="PASS" starttime="20210729 10:46:10.271" endtime="20210729 10:46:10.308"/>
+</kw>
+<kw name="Verify Page Loaded" library="LandingPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SITE_NAME_ELEMENT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210729 10:46:10.308" endtime="20210729 10:46:10.324"/>
+</kw>
+<status status="PASS" starttime="20210729 10:46:10.308" endtime="20210729 10:46:10.324"/>
+</kw>
+<status status="PASS" starttime="20210729 10:46:10.270" endtime="20210729 10:46:10.324"/>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210729 10:46:10.325" endtime="20210729 10:46:12.540"/>
+</kw>
+<status status="PASS" starttime="20210729 10:46:10.324" endtime="20210729 10:46:12.540"/>
+</kw>
+<doc>Validate that user can fill Input Form Submit from Selenium Easy
+Test with valid Strings and all fields. All fields must be taken dynamically
+by using Faker library from our faker_code.py</doc>
+<tag>Demo</tag>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20210729 10:46:03.095" endtime="20210729 10:46:12.541"/>
+</test>
+<doc>This test suite validates Input Form Submit demo
+on Selenium Easy Test webpage</doc>
+<status status="PASS" starttime="20210729 10:46:02.862" endtime="20210729 10:46:12.542"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Demo</stat>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Input Form Submit Test">Input Form Submit Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210729 10:46:03.081" level="ERROR">Error in file 'C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputData.robot' on line 3: Importing library 'C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\CustomLibs\csv_code.py' failed: ModuleNotFoundError: No module named 'faker_code'
+Traceback (most recent call last):
+  File "C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\CustomLibs\csv_code.py", line 4, in &lt;module&gt;
+    import faker_code
+PYTHONPATH:
+  C:\Users\Luis Tellez\PycharmProjects\pythonProject\venv\Scripts\robot.exe
+  C:\Users\Luis Tellez\AppData\Local\Programs\Python\Python38\python38.zip
+  C:\Users\Luis Tellez\AppData\Local\Programs\Python\Python38\DLLs
+  C:\Users\Luis Tellez\AppData\Local\Programs\Python\Python38\lib
+  C:\Users\Luis Tellez\AppData\Local\Programs\Python\Python38
+  c:\users\luis tellez\pycharmprojects\pythonproject\venv
+  c:\users\luis tellez\pycharmprojects\pythonproject\venv\lib\site-packages</msg>
+<msg timestamp="20210729 10:46:03.089" level="ERROR">Error in file 'C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Resources\DataManager.robot' on line 3: Importing library 'C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\CustomLibs\csv_code.py' failed: ModuleNotFoundError: No module named 'faker_code'
+Traceback (most recent call last):
+  File "C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\CustomLibs\csv_code.py", line 4, in &lt;module&gt;
+    import faker_code
+PYTHONPATH:
+  C:\Users\Luis Tellez\PycharmProjects\pythonProject\venv\Scripts\robot.exe
+  C:\Users\Luis Tellez\AppData\Local\Programs\Python\Python38\python38.zip
+  C:\Users\Luis Tellez\AppData\Local\Programs\Python\Python38\DLLs
+  C:\Users\Luis Tellez\AppData\Local\Programs\Python\Python38\lib
+  C:\Users\Luis Tellez\AppData\Local\Programs\Python\Python38
+  c:\users\luis tellez\pycharmprojects\pythonproject\venv
+  c:\users\luis tellez\pycharmprojects\pythonproject\venv\lib\site-packages</msg>
+<msg timestamp="20210729 10:46:03.090" level="ERROR">Error in file 'C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Resources\CommonWeb.robot' on line 5: Test library '..\CustomLibs\pdf_report_code.py' does not exist.</msg>
+<msg timestamp="20210729 10:46:03.092" level="ERROR">Error in file 'C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\tests\inputforms\input_form_submit_test.robot' on line 6: Resource file '..\..\Resources\PO\InputForms\InputFormSubmit.robot' does not exist.</msg>
+</errors>
+</robot>
