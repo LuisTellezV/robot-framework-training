@@ -10,4 +10,13 @@ ${SITE_TITLE} =    xpath://h2[contains(text(), 'Input form with validations')]
 Validate "Input Form Submit" page loaded
     wait until element is visible    ${SITE_TITLE}
 
+Fill Form without First Name
+
+
+Fill Last Name
+
+
+Fill Email
+
+
 

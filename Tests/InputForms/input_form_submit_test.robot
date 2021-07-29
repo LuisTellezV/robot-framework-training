@@ -17,7 +17,7 @@ ${TEST_DATA_PATH} =    InputForms\\InputFormSubmit
 
 
 *** Test Cases ***
-Test Demo Name
+IFS_001 - Validate all fields are filled with String values - PostiveTestCase
 
     CommonWeb.Get Test Data    ${TEST_DATA_PATH}
 
@@ -27,3 +27,22 @@ Test Demo Name
     LandingPage.Click on Input Forms from dropdown
     LandingPage.Click on Input Form Submit option
     InputFormSubmit.Validate "Input Form Submit" page loaded
+
+
+IFS_002 - Validate Please Supply your First Name error is displayed
+    [Documentation]    Validate that when user doesn't provide a first name in Input Form Submit
+    ...    Demo, the error "Please Supply your first name" is displayed below "First Name" field.
+
+    CommonWeb.Get Test Data    ${TEST_DATA_PATH}
+
+    SeleniumApp.Navigate to "Selenium Easy Test" landing page
+    LandingPage.Close Automation Message PopUp
+    LandingPage.Validate Page Loaded
+    LandingPage.Click on Input Forms from dropdown
+    LandingPage.Click on Input Form Submit option
+    InputFormSubmit.Validate "Input Form Submit" page loaded
+
+    InputFormSubmit.Fill Form without FirstName
+    InputFormSubmit.Fill LastName
+    InputFormSubmit.Fill Email
+

@@ -1,115 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.2 (Python 3.8.6 on win32)" generated="20210729 11:27:34.447" rpa="false" schemaversion="2">
+<robot generator="Robot 4.0.2 (Python 3.8.6 on win32)" generated="20210729 13:10:00.691" rpa="false" schemaversion="2">
 <suite id="s1" name="Input Form Submit Test" source="C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\tests\inputforms\input_form_submit_test.robot">
-<test id="s1-t1" name="Test Demo Name">
+<test id="s1-t1" name="IFS_001 - Validate all fields are filled with String values - PostiveTestCase">
 <kw name="Begin Web Test" library="CommonWeb" type="SETUP">
 <doc>This Keyword help us setup all our test cases dynamically</doc>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210729 11:27:34.664" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210729 11:27:34.664" endtime="20210729 11:27:35.891"/>
+<msg timestamp="20210729 13:10:00.916" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210729 13:10:00.916" endtime="20210729 13:10:02.227"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210729 11:27:35.891" endtime="20210729 11:27:36.002"/>
+<status status="PASS" starttime="20210729 13:10:02.227" endtime="20210729 13:10:02.348"/>
 </kw>
-<status status="PASS" starttime="20210729 11:27:34.663" endtime="20210729 11:27:36.003"/>
+<status status="PASS" starttime="20210729 13:10:00.916" endtime="20210729 13:10:02.348"/>
+</kw>
+<kw name="Get Test Data" library="CommonWeb">
+<arg>${TEST_DATA_PATH}</arg>
+<kw name="Get Path for Test Data File" library="InputData">
+<var>${PATH}</var>
+<arg>${DIRECTORY_NAME}</arg>
+<arg>${TEST_NAME}</arg>
+<kw name="Replace String" library="String">
+<var>${TEST_NAME}</var>
+<arg>${TEST_NAME}</arg>
+<arg>${space}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20210729 13:10:02.349" level="INFO">${TEST_NAME} = IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase</msg>
+<status status="PASS" starttime="20210729 13:10:02.349" endtime="20210729 13:10:02.349"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${TEST_DATA_PATH}</var>
+<arg>SEPARATOR=</arg>
+<arg>C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\${PATH_TO_POM}\\${TEST_NAME}.csv</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210729 13:10:02.350" level="INFO">${TEST_DATA_PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase.csv</msg>
+<status status="PASS" starttime="20210729 13:10:02.349" endtime="20210729 13:10:02.350"/>
+</kw>
+<msg timestamp="20210729 13:10:02.350" level="INFO">${PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase.csv</msg>
+<status status="PASS" starttime="20210729 13:10:02.349" endtime="20210729 13:10:02.350"/>
+</kw>
+<kw name="Get CSV Data" library="DataManager">
+<var>${SIMPLE_FORM_DATA}</var>
+<arg>${PATH}</arg>
+<kw name="Read Csv File" library="csv_code">
+<var>${Data}</var>
+<arg>${FILE_PATH}</arg>
+<msg timestamp="20210729 13:10:02.351" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\InputForms\\InputFormSubmit\\IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase.csv'</msg>
+<status status="FAIL" starttime="20210729 13:10:02.350" endtime="20210729 13:10:02.351"/>
+</kw>
+<status status="FAIL" starttime="20210729 13:10:02.350" endtime="20210729 13:10:02.351"/>
+</kw>
+<status status="FAIL" starttime="20210729 13:10:02.348" endtime="20210729 13:10:02.351"/>
 </kw>
 <kw name="Navigate to &quot;Selenium Easy Test&quot; landing page" library="SeleniumApp">
 <doc>This Keyword reaches our Landing Page, and verifies that the PopUp Appears whenever it enters
 to the website</doc>
-<kw name="Navigate To" library="LandingPage">
-<arg>${BASE_URL}</arg>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210729 11:27:36.004" level="INFO">Opening url 'https://www.seleniumeasy.com/test/'</msg>
-<status status="PASS" starttime="20210729 11:27:36.004" endtime="20210729 11:27:37.937"/>
-</kw>
-<status status="PASS" starttime="20210729 11:27:36.004" endtime="20210729 11:27:37.937"/>
-</kw>
-<kw name="Validate PopUp Appears" library="LandingPage">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${CLOSE_AUTOMATION_POPUP_BTN}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210729 11:27:37.938" endtime="20210729 11:27:39.186"/>
-</kw>
-<status status="PASS" starttime="20210729 11:27:37.938" endtime="20210729 11:27:39.186"/>
-</kw>
-<status status="PASS" starttime="20210729 11:27:36.003" endtime="20210729 11:27:39.187"/>
+<status status="NOT RUN" starttime="20210729 13:10:02.351" endtime="20210729 13:10:02.351"/>
 </kw>
 <kw name="Close Automation Message PopUp" library="LandingPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${CLOSE_AUTOMATION_POPUP_BTN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210729 11:27:39.189" level="INFO">Clicking element 'id:at-cv-lightbox-close'.</msg>
-<status status="PASS" starttime="20210729 11:27:39.188" endtime="20210729 11:27:39.227"/>
-</kw>
-<status status="PASS" starttime="20210729 11:27:39.188" endtime="20210729 11:27:39.227"/>
+<status status="NOT RUN" starttime="20210729 13:10:02.351" endtime="20210729 13:10:02.352"/>
 </kw>
 <kw name="Validate Page Loaded" library="LandingPage">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${SITE_NAME_ELEMENT}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210729 11:27:39.227" endtime="20210729 11:27:39.238"/>
-</kw>
-<status status="PASS" starttime="20210729 11:27:39.227" endtime="20210729 11:27:39.238"/>
+<status status="NOT RUN" starttime="20210729 13:10:02.352" endtime="20210729 13:10:02.352"/>
 </kw>
 <kw name="Click on Input Forms from dropdown" library="LandingPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${INPUT_FORMS_OPTION}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210729 11:27:39.240" level="INFO">Clicking element 'xpath:(//li/a[contains(text(), 'Input Forms')])[1]'.</msg>
-<status status="PASS" starttime="20210729 11:27:39.239" endtime="20210729 11:27:39.277"/>
-</kw>
-<status status="PASS" starttime="20210729 11:27:39.239" endtime="20210729 11:27:39.277"/>
+<status status="NOT RUN" starttime="20210729 13:10:02.352" endtime="20210729 13:10:02.352"/>
 </kw>
 <kw name="Click on Input Form Submit option" library="LandingPage">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${INPUT_FORM_SUBMIT_SECTION}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210729 11:27:39.278" level="INFO">Clicking link 'link:Input Form Submit'.</msg>
-<status status="PASS" starttime="20210729 11:27:39.278" endtime="20210729 11:27:39.524"/>
-</kw>
-<status status="PASS" starttime="20210729 11:27:39.278" endtime="20210729 11:27:39.524"/>
+<status status="NOT RUN" starttime="20210729 13:10:02.352" endtime="20210729 13:10:02.352"/>
 </kw>
 <kw name="Validate &quot;Input Form Submit&quot; page loaded" library="InputFormSubmit">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${SITE_TITLE}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210729 11:27:39.524" endtime="20210729 11:27:39.547"/>
-</kw>
-<status status="PASS" starttime="20210729 11:27:39.524" endtime="20210729 11:27:39.547"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210729 11:27:44.550" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20210729 11:27:39.548" endtime="20210729 11:27:44.550"/>
+<status status="NOT RUN" starttime="20210729 13:10:02.352" endtime="20210729 13:10:02.352"/>
 </kw>
 <kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210729 11:27:44.551" endtime="20210729 11:27:46.715"/>
+<status status="PASS" starttime="20210729 13:10:02.353" endtime="20210729 13:10:04.579"/>
 </kw>
-<status status="PASS" starttime="20210729 11:27:44.551" endtime="20210729 11:27:46.715"/>
+<status status="PASS" starttime="20210729 13:10:02.353" endtime="20210729 13:10:04.580"/>
 </kw>
-<status status="PASS" starttime="20210729 11:27:34.662" endtime="20210729 11:27:46.717"/>
+<status status="FAIL" starttime="20210729 13:10:00.914" endtime="20210729 13:10:04.583">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\InputForms\\InputFormSubmit\\IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase.csv'</status>
+</test>
+<test id="s1-t2" name="IFS_002 - Validate Please Supply your First Name error is displayed">
+<kw name="Begin Web Test" library="CommonWeb" type="SETUP">
+<doc>This Keyword help us setup all our test cases dynamically</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210729 13:10:04.587" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210729 13:10:04.587" endtime="20210729 13:10:05.841"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210729 13:10:05.841" endtime="20210729 13:10:05.972"/>
+</kw>
+<status status="PASS" starttime="20210729 13:10:04.586" endtime="20210729 13:10:05.973"/>
+</kw>
+<kw name="Get Test Data" library="CommonWeb">
+<arg>${TEST_DATA_PATH}</arg>
+<kw name="Get Path for Test Data File" library="InputData">
+<var>${PATH}</var>
+<arg>${DIRECTORY_NAME}</arg>
+<arg>${TEST_NAME}</arg>
+<kw name="Replace String" library="String">
+<var>${TEST_NAME}</var>
+<arg>${TEST_NAME}</arg>
+<arg>${space}</arg>
+<arg>_</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20210729 13:10:05.977" level="INFO">${TEST_NAME} = IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed</msg>
+<status status="PASS" starttime="20210729 13:10:05.976" endtime="20210729 13:10:05.977"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${TEST_DATA_PATH}</var>
+<arg>SEPARATOR=</arg>
+<arg>C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\${PATH_TO_POM}\\${TEST_NAME}.csv</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210729 13:10:05.978" level="INFO">${TEST_DATA_PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv</msg>
+<status status="PASS" starttime="20210729 13:10:05.977" endtime="20210729 13:10:05.978"/>
+</kw>
+<msg timestamp="20210729 13:10:05.979" level="INFO">${PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv</msg>
+<status status="PASS" starttime="20210729 13:10:05.975" endtime="20210729 13:10:05.979"/>
+</kw>
+<kw name="Get CSV Data" library="DataManager">
+<var>${SIMPLE_FORM_DATA}</var>
+<arg>${PATH}</arg>
+<kw name="Read Csv File" library="csv_code">
+<var>${Data}</var>
+<arg>${FILE_PATH}</arg>
+<msg timestamp="20210729 13:10:05.982" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\InputForms\\InputFormSubmit\\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv'</msg>
+<status status="FAIL" starttime="20210729 13:10:05.981" endtime="20210729 13:10:05.982"/>
+</kw>
+<status status="FAIL" starttime="20210729 13:10:05.979" endtime="20210729 13:10:05.982"/>
+</kw>
+<status status="FAIL" starttime="20210729 13:10:05.974" endtime="20210729 13:10:05.982"/>
+</kw>
+<kw name="Navigate to &quot;Selenium Easy Test&quot; landing page" library="SeleniumApp">
+<doc>This Keyword reaches our Landing Page, and verifies that the PopUp Appears whenever it enters
+to the website</doc>
+<status status="NOT RUN" starttime="20210729 13:10:05.982" endtime="20210729 13:10:05.983"/>
+</kw>
+<kw name="Close Automation Message PopUp" library="LandingPage">
+<status status="NOT RUN" starttime="20210729 13:10:05.983" endtime="20210729 13:10:05.983"/>
+</kw>
+<kw name="Validate Page Loaded" library="LandingPage">
+<status status="NOT RUN" starttime="20210729 13:10:05.983" endtime="20210729 13:10:05.983"/>
+</kw>
+<kw name="Click on Input Forms from dropdown" library="LandingPage">
+<status status="NOT RUN" starttime="20210729 13:10:05.984" endtime="20210729 13:10:05.984"/>
+</kw>
+<kw name="Click on Input Form Submit option" library="LandingPage">
+<status status="NOT RUN" starttime="20210729 13:10:05.984" endtime="20210729 13:10:05.984"/>
+</kw>
+<kw name="Validate &quot;Input Form Submit&quot; page loaded" library="InputFormSubmit">
+<status status="NOT RUN" starttime="20210729 13:10:05.984" endtime="20210729 13:10:05.985"/>
+</kw>
+<kw name="Fill Form without First Name" library="InputFormSubmit">
+<status status="NOT RUN" starttime="20210729 13:10:05.985" endtime="20210729 13:10:05.985"/>
+</kw>
+<kw name="Fill Last Name" library="InputFormSubmit">
+<status status="NOT RUN" starttime="20210729 13:10:05.985" endtime="20210729 13:10:05.985"/>
+</kw>
+<kw name="Fill Email" library="InputFormSubmit">
+<status status="NOT RUN" starttime="20210729 13:10:05.986" endtime="20210729 13:10:05.986"/>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210729 13:10:05.987" endtime="20210729 13:10:08.260"/>
+</kw>
+<status status="PASS" starttime="20210729 13:10:05.986" endtime="20210729 13:10:08.260"/>
+</kw>
+<doc>Validate that when user doesn't provide a first name in Input Form Submit
+Demo, the error "Please Supply your first name" is displayed below "First Name" field.</doc>
+<status status="FAIL" starttime="20210729 13:10:04.585" endtime="20210729 13:10:08.261">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\InputForms\\InputFormSubmit\\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv'</status>
 </test>
 <doc>This test suite validates Input Form Submit demo
 on Selenium Easy Test webpage</doc>
-<status status="PASS" starttime="20210729 11:27:34.449" endtime="20210729 11:27:46.719"/>
+<status status="FAIL" starttime="20210729 13:10:00.693" endtime="20210729 13:10:08.263"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Input Form Submit Test">Input Form Submit Test</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Input Form Submit Test">Input Form Submit Test</stat>
 </suite>
 </statistics>
 <errors>

@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\Data\InputForms\InputFormSubmit\IFS_001 - Validate all fields are filled with String values - PositiveTestCase">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\Data\InputForms\InputFormSubmit\IFS_001_-_DynamicForm_-_Validate_submitting_multiple_input_forms_with_all_fields.csv">
           <value>
             <Attribute>
