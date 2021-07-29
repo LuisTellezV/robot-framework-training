@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    PO/LandingPage.robot
+Resource    PO/LandingPage/LandingPage.robot
 Resource    ../Data/InputData.robot
 
 *** Variables ***

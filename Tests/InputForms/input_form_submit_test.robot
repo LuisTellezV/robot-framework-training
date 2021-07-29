@@ -24,3 +24,4 @@ Test Demo Name
     LandingPage.Click on Input Forms from dropdown
     LandingPage.Click on Input Form Submit option
     InputFormSubmit.Validate "Input Form Submit" page loaded
+    sleep    5s
