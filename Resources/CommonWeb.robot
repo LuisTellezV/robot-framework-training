@@ -4,8 +4,6 @@ Resource    ../Data/InputData.robot
 Resource    ../Resources/DataManager.robot
 
 *** Variables ***
-&{TEST_DATA_CREATION}
-    ...    input_form_submit=first_name,last_name,email,phone_number,address,city,state,zip_code,website,option,description
 
 *** Keywords ***
 Begin Web Test
