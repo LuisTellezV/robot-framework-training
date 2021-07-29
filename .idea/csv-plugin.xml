@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CsvFileAttributes">
+    <option name="attributeMap">
+      <map>
+        <entry key="\Data\AlertsAndModals\BootstrapAlerts\BAT_001_-_Verify_Autoclosable_Messages_display_and_close_properly_on_Bootstrap_Alerts_site.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Data\AlertsAndModals\BootstrapAlerts\BAT_002_-_Verify_Normal_Messages_display_and_close_properly_on_Bootstrap_Alerts_site.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Data\InputForms\InputFormSubmit\IFS_001_-_DynamicForm_-_Validate_submitting_multiple_input_forms_with_all_fields.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Data\InputForms\InputFormSubmit\IFS_002_-_NonDynamicForm_-_Validate_submitting_multiple_input_forms_with_all_fields.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Data\InputForms\InputFormSubmit\IFS_003_-_NegativeTestCase_-_Validate_all_error_messages_from_input_forms_when_by_not_inserting_text_on_fields.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Data\InputForms\SimpleFormDemo\SFT_001_-_Validate_single_input_field_Your_Message_with_different_strings.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Data\InputForms\SimpleFormDemo\SFT_002_-_Validate_multiple_input_fields_sum_with_different_string_combinations.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Results\path.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\Results\test_info.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
