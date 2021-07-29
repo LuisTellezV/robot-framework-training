@@ -12,4 +12,3 @@ Navigate to "Selenium Easy Test" landing page
     ...     to the website
     LandingPage.Navigate To    ${BASE_URL}
     LandingPage.Validate PopUp Appears
-
