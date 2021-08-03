@@ -6,6 +6,7 @@ Library    ../CustomLibs/csv_code.py
 # Configuration
 ${BROWSER} =    chrome
 ${BASE_URL} =    https://www.seleniumeasy.com/test/
+${INPUT_FORMS_DROPDOWN} =    //*[@id="navbar-brand-centered"]/ul[1]/li[1]/a
 
 *** Keywords ***
 Get Path for Test Data File

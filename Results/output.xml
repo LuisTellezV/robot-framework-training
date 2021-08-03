@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.2 (Python 3.8.6 on win32)" generated="20210729 13:17:15.024" rpa="false" schemaversion="2">
-<suite id="s1" name="Input Form Submit Test" source="C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\tests\inputforms\input_form_submit_test.robot">
-<test id="s1-t1" name="IFS_001 - Validate all fields are filled with String values - PostiveTestCase">
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210803 12:30:30.446" rpa="false" schemaversion="2">
+<suite id="s1" name="SimpleFormDemoTest" source="C:\Users\Axel Marruenda\repos\robot-framework-training\Tests\InputForms\SimpleFormDemoTest.robot">
+<test id="s1-t1" name="SFD_001 - Single Input Field displays user input in Your Message label">
 <kw name="Begin Web Test" library="CommonWeb" type="SETUP">
 <doc>This Keyword help us setup all our test cases dynamically</doc>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210729 13:17:15.245" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210729 13:17:15.245" endtime="20210729 13:17:16.497"/>
+<msg timestamp="20210803 12:30:30.672" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210803 12:30:30.672" endtime="20210803 12:30:31.882"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210729 13:17:16.497" endtime="20210729 13:17:16.627"/>
+<status status="PASS" starttime="20210803 12:30:31.883" endtime="20210803 12:30:31.997"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:15.244" endtime="20210729 13:17:16.628"/>
+<status status="PASS" starttime="20210803 12:30:30.672" endtime="20210803 12:30:31.997"/>
 </kw>
 <kw name="Get Test Data" library="CommonWeb">
+<var>${Input_text_data}</var>
 <arg>${TEST_DATA_PATH}</arg>
 <kw name="Get Path for Test Data File" library="InputData">
 <var>${PATH}</var>
@@ -29,19 +30,19 @@
 <arg>${space}</arg>
 <arg>_</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20210729 13:17:16.631" level="INFO">${TEST_NAME} = IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase</msg>
-<status status="PASS" starttime="20210729 13:17:16.631" endtime="20210729 13:17:16.631"/>
+<msg timestamp="20210803 12:30:31.999" level="INFO">${TEST_NAME} = SFD_001_-_Single_Input_Field_displays_user_input_in_Your_Message_label</msg>
+<status status="PASS" starttime="20210803 12:30:31.998" endtime="20210803 12:30:31.999"/>
 </kw>
 <kw name="Catenate" library="BuiltIn">
 <var>${TEST_DATA_PATH}</var>
 <arg>SEPARATOR=</arg>
-<arg>C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\${PATH_TO_POM}\\${TEST_NAME}.csv</arg>
+<arg>C:\\Users\\Axel Marruenda\\repos\\robot-framework-training\\Data\\${PATH_TO_POM}\\${TEST_NAME}.csv</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<msg timestamp="20210729 13:17:16.631" level="INFO">${TEST_DATA_PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase.csv</msg>
-<status status="PASS" starttime="20210729 13:17:16.631" endtime="20210729 13:17:16.632"/>
+<msg timestamp="20210803 12:30:31.999" level="INFO">${TEST_DATA_PATH} = C:\Users\Axel Marruenda\repos\robot-framework-training\Data\InputForms\SimpleFormDemo\SFD_001_-_Single_Input_Field_displays_user_input_in_Your_Message_label.csv</msg>
+<status status="PASS" starttime="20210803 12:30:31.999" endtime="20210803 12:30:31.999"/>
 </kw>
-<msg timestamp="20210729 13:17:16.632" level="INFO">${PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase.csv</msg>
-<status status="PASS" starttime="20210729 13:17:16.629" endtime="20210729 13:17:16.632"/>
+<msg timestamp="20210803 12:30:31.999" level="INFO">${PATH} = C:\Users\Axel Marruenda\repos\robot-framework-training\Data\InputForms\SimpleFormDemo\SFD_001_-_Single_Input_Field_displays_user_input_in_Your_Message_label.csv</msg>
+<status status="PASS" starttime="20210803 12:30:31.998" endtime="20210803 12:30:31.999"/>
 </kw>
 <kw name="Get CSV Data" library="DataManager">
 <var>${SIMPLE_FORM_DATA}</var>
@@ -49,15 +50,16 @@
 <kw name="Read Csv File" library="csv_code">
 <var>${Data}</var>
 <arg>${FILE_PATH}</arg>
-<msg timestamp="20210729 13:17:16.634" level="INFO">${Data} = []</msg>
-<status status="PASS" starttime="20210729 13:17:16.633" endtime="20210729 13:17:16.634"/>
+<msg timestamp="20210803 12:30:32.000" level="INFO">${Data} = [['123'], ['#@!'], ['Hello', ' World!'], ['\\\\text'], ['text'], [], ['5*5']]</msg>
+<status status="PASS" starttime="20210803 12:30:32.000" endtime="20210803 12:30:32.000"/>
 </kw>
-<msg timestamp="20210729 13:17:16.634" level="INFO">${SIMPLE_FORM_DATA} = []</msg>
-<status status="PASS" starttime="20210729 13:17:16.632" endtime="20210729 13:17:16.634"/>
+<msg timestamp="20210803 12:30:32.000" level="INFO">${SIMPLE_FORM_DATA} = [['123'], ['#@!'], ['Hello', ' World!'], ['\\\\text'], ['text'], [], ['5*5']]</msg>
+<status status="PASS" starttime="20210803 12:30:31.999" endtime="20210803 12:30:32.000"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:16.628" endtime="20210729 13:17:16.634"/>
+<msg timestamp="20210803 12:30:32.001" level="INFO">${Input_text_data} = [['123'], ['#@!'], ['Hello', ' World!'], ['\\\\text'], ['text'], [], ['5*5']]</msg>
+<status status="PASS" starttime="20210803 12:30:31.998" endtime="20210803 12:30:32.001"/>
 </kw>
-<kw name="Navigate to &quot;Selenium Easy Test&quot; landing page" library="SeleniumApp">
+<kw name="Go to &quot;Selenium Easy Test&quot; Landing Page" library="SeleniumApp">
 <doc>This Keyword reaches our Landing Page, and verifies that the PopUp Appears whenever it enters
 to the website</doc>
 <kw name="Navigate To" library="LandingPage">
@@ -65,180 +67,296 @@ to the website</doc>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210729 13:17:16.637" level="INFO">Opening url 'https://www.seleniumeasy.com/test/'</msg>
-<status status="PASS" starttime="20210729 13:17:16.636" endtime="20210729 13:17:18.695"/>
+<msg timestamp="20210803 12:30:32.002" level="INFO">Opening url 'https://www.seleniumeasy.com/test/'</msg>
+<status status="PASS" starttime="20210803 12:30:32.001" endtime="20210803 12:30:35.702"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:16.636" endtime="20210729 13:17:18.695"/>
+<status status="PASS" starttime="20210803 12:30:32.001" endtime="20210803 12:30:35.702"/>
 </kw>
 <kw name="Validate PopUp Appears" library="LandingPage">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${CLOSE_AUTOMATION_POPUP_BTN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210729 13:17:18.695" endtime="20210729 13:17:19.848"/>
+<status status="PASS" starttime="20210803 12:30:35.704" endtime="20210803 12:30:36.735"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:18.695" endtime="20210729 13:17:19.848"/>
+<status status="PASS" starttime="20210803 12:30:35.703" endtime="20210803 12:30:36.735"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:16.635" endtime="20210729 13:17:19.848"/>
+<status status="PASS" starttime="20210803 12:30:32.001" endtime="20210803 12:30:36.736"/>
 </kw>
 <kw name="Close Automation Message PopUp" library="LandingPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${CLOSE_AUTOMATION_POPUP_BTN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210729 13:17:19.850" level="INFO">Clicking element 'id:at-cv-lightbox-close'.</msg>
-<status status="PASS" starttime="20210729 13:17:19.849" endtime="20210729 13:17:19.893"/>
+<msg timestamp="20210803 12:30:36.738" level="INFO">Clicking element 'id:at-cv-lightbox-close'.</msg>
+<status status="PASS" starttime="20210803 12:30:36.737" endtime="20210803 12:30:36.787"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:19.849" endtime="20210729 13:17:19.893"/>
+<status status="PASS" starttime="20210803 12:30:36.737" endtime="20210803 12:30:36.787"/>
 </kw>
 <kw name="Validate Page Loaded" library="LandingPage">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${SITE_NAME_ELEMENT}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210729 13:17:19.894" endtime="20210729 13:17:19.912"/>
+<status status="PASS" starttime="20210803 12:30:36.788" endtime="20210803 12:30:36.797"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:19.893" endtime="20210729 13:17:19.913"/>
+<status status="PASS" starttime="20210803 12:30:36.787" endtime="20210803 12:30:36.797"/>
 </kw>
-<kw name="Click on Input Forms from dropdown" library="LandingPage">
+<kw name="Go to &quot;Simple Form Demo&quot; Page" library="SimpleFormDemo">
+<doc>This Keyword navigates to "Simple Form Demo" and validates the page loaded.</doc>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${INPUT_FORMS_OPTION}</arg>
+<arg>${INPUT_FORMS_DROPDOWN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210729 13:17:19.914" level="INFO">Clicking element 'xpath:(//li/a[contains(text(), 'Input Forms')])[1]'.</msg>
-<status status="PASS" starttime="20210729 13:17:19.914" endtime="20210729 13:17:19.966"/>
+<msg timestamp="20210803 12:30:36.798" level="INFO">Clicking element '//*[@id="navbar-brand-centered"]/ul[1]/li[1]/a'.</msg>
+<status status="PASS" starttime="20210803 12:30:36.798" endtime="20210803 12:30:36.836"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:19.913" endtime="20210729 13:17:19.967"/>
-</kw>
-<kw name="Click on Input Form Submit option" library="LandingPage">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${INPUT_FORM_SUBMIT_SECTION}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210729 13:17:19.968" level="INFO">Clicking link 'link:Input Form Submit'.</msg>
-<status status="PASS" starttime="20210729 13:17:19.968" endtime="20210729 13:17:20.326"/>
-</kw>
-<status status="PASS" starttime="20210729 13:17:19.968" endtime="20210729 13:17:20.326"/>
-</kw>
-<kw name="Validate &quot;Input Form Submit&quot; page loaded" library="InputFormSubmit">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${SITE_TITLE}</arg>
+<arg>${DROPDOWN_MENU}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210729 13:17:20.327" endtime="20210729 13:17:20.347"/>
+<status status="PASS" starttime="20210803 12:30:36.836" endtime="20210803 12:30:36.858"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:20.326" endtime="20210729 13:17:20.347"/>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${SIMPLE_FORM_DEMO_LINK}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:36.858" level="INFO">Clicking link 'css=ul[class*='nav'] li &gt; a[href='./basic-first-form-demo.html']'.</msg>
+<status status="PASS" starttime="20210803 12:30:36.858" endtime="20210803 12:30:37.224"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Single Input Field</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210803 12:30:37.225" endtime="20210803 12:30:37.259"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:36.797" endtime="20210803 12:30:37.259"/>
+</kw>
+<kw name="Input Text in User Message Text Area" library="SimpleFormDemo">
+<arg>${Input_text_data}</arg>
+<doc>This Keyword inputs text into Text Area and validate the message label displays it.</doc>
+<for flavor="IN">
+<var>${Row}</var>
+<value>@{Input_Text}</value>
+<iter>
+<var name="${Row}">['123']</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_MESSAGE_TEXT_AREA}</arg>
+<arg>${Row}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.261" level="INFO">Typing text '['123']' into text field 'css=#get-input #user-message'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.261" endtime="20210803 12:30:37.326"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHOW_MESSAGE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.327" level="INFO">Clicking element 'xpath=//*[@id="get-input"]/button'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.326" endtime="20210803 12:30:37.357"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Row}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Row}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210803 12:30:37.357" endtime="20210803 12:30:37.366"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.357" endtime="20210803 12:30:37.366"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.260" endtime="20210803 12:30:37.366"/>
+</iter>
+<iter>
+<var name="${Row}">['#@!']</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_MESSAGE_TEXT_AREA}</arg>
+<arg>${Row}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.366" level="INFO">Typing text '['#@!']' into text field 'css=#get-input #user-message'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.366" endtime="20210803 12:30:37.408"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHOW_MESSAGE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.408" level="INFO">Clicking element 'xpath=//*[@id="get-input"]/button'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.408" endtime="20210803 12:30:37.428"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Row}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Row}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210803 12:30:37.428" endtime="20210803 12:30:37.438"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.428" endtime="20210803 12:30:37.438"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.366" endtime="20210803 12:30:37.438"/>
+</iter>
+<iter>
+<var name="${Row}">['Hello', ' World!']</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_MESSAGE_TEXT_AREA}</arg>
+<arg>${Row}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.438" level="INFO">Typing text '['Hello', ' World!']' into text field 'css=#get-input #user-message'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.438" endtime="20210803 12:30:37.487"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHOW_MESSAGE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.488" level="INFO">Clicking element 'xpath=//*[@id="get-input"]/button'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.488" endtime="20210803 12:30:37.507"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Row}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Row}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210803 12:30:37.507" endtime="20210803 12:30:37.517"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.507" endtime="20210803 12:30:37.517"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.438" endtime="20210803 12:30:37.517"/>
+</iter>
+<iter>
+<var name="${Row}">['\\\\text']</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_MESSAGE_TEXT_AREA}</arg>
+<arg>${Row}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.518" level="INFO">Typing text '['\\\\text']' into text field 'css=#get-input #user-message'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.517" endtime="20210803 12:30:37.562"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHOW_MESSAGE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.562" level="INFO">Clicking element 'xpath=//*[@id="get-input"]/button'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.562" endtime="20210803 12:30:37.589"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Row}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Row}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210803 12:30:37.589" endtime="20210803 12:30:37.598"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.589" endtime="20210803 12:30:37.598"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.517" endtime="20210803 12:30:37.598"/>
+</iter>
+<iter>
+<var name="${Row}">['text']</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_MESSAGE_TEXT_AREA}</arg>
+<arg>${Row}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.599" level="INFO">Typing text '['text']' into text field 'css=#get-input #user-message'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.598" endtime="20210803 12:30:37.648"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHOW_MESSAGE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.648" level="INFO">Clicking element 'xpath=//*[@id="get-input"]/button'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.648" endtime="20210803 12:30:37.668"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Row}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Row}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210803 12:30:37.668" endtime="20210803 12:30:37.677"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.668" endtime="20210803 12:30:37.677"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.598" endtime="20210803 12:30:37.677"/>
+</iter>
+<iter>
+<var name="${Row}">[]</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_MESSAGE_TEXT_AREA}</arg>
+<arg>${Row}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.677" level="INFO">Typing text '[]' into text field 'css=#get-input #user-message'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.677" endtime="20210803 12:30:37.716"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHOW_MESSAGE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.717" level="INFO">Clicking element 'xpath=//*[@id="get-input"]/button'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.716" endtime="20210803 12:30:37.736"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Row}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Row}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210803 12:30:37.737" endtime="20210803 12:30:37.745"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.736" endtime="20210803 12:30:37.746"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.677" endtime="20210803 12:30:37.746"/>
+</iter>
+<iter>
+<var name="${Row}">['5*5']</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USER_MESSAGE_TEXT_AREA}</arg>
+<arg>${Row}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.746" level="INFO">Typing text '['5*5']' into text field 'css=#get-input #user-message'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.746" endtime="20210803 12:30:37.789"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SHOW_MESSAGE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210803 12:30:37.790" level="INFO">Clicking element 'xpath=//*[@id="get-input"]/button'.</msg>
+<status status="PASS" starttime="20210803 12:30:37.789" endtime="20210803 12:30:37.811"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Row}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Row}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210803 12:30:37.812" endtime="20210803 12:30:37.821"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.811" endtime="20210803 12:30:37.821"/>
+</kw>
+<status status="PASS" starttime="20210803 12:30:37.746" endtime="20210803 12:30:37.821"/>
+</iter>
+<status status="PASS" starttime="20210803 12:30:37.260" endtime="20210803 12:30:37.821"/>
+</for>
+<status status="PASS" starttime="20210803 12:30:37.260" endtime="20210803 12:30:37.821"/>
 </kw>
 <kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210729 13:17:20.348" endtime="20210729 13:17:22.563"/>
+<status status="PASS" starttime="20210803 12:30:37.822" endtime="20210803 12:30:40.023"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:20.347" endtime="20210729 13:17:22.563"/>
+<status status="PASS" starttime="20210803 12:30:37.822" endtime="20210803 12:30:40.023"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:15.244" endtime="20210729 13:17:22.564"/>
+<doc>Validate input provided by user inside Single Input Field's Text Area</doc>
+<tag>is displayed in "Your Message" label.</tag>
+<tag>SFD</tag>
+<status status="PASS" starttime="20210803 12:30:30.671" endtime="20210803 12:30:40.024"/>
 </test>
-<test id="s1-t2" name="IFS_002 - Validate Please Supply your First Name error is displayed">
-<kw name="Begin Web Test" library="CommonWeb" type="SETUP">
-<doc>This Keyword help us setup all our test cases dynamically</doc>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210729 13:17:22.566" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210729 13:17:22.566" endtime="20210729 13:17:23.827"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210729 13:17:23.827" endtime="20210729 13:17:23.947"/>
-</kw>
-<status status="PASS" starttime="20210729 13:17:22.566" endtime="20210729 13:17:23.947"/>
-</kw>
-<kw name="Get Test Data" library="CommonWeb">
-<arg>${TEST_DATA_PATH}</arg>
-<kw name="Get Path for Test Data File" library="InputData">
-<var>${PATH}</var>
-<arg>${DIRECTORY_NAME}</arg>
-<arg>${TEST_NAME}</arg>
-<kw name="Replace String" library="String">
-<var>${TEST_NAME}</var>
-<arg>${TEST_NAME}</arg>
-<arg>${space}</arg>
-<arg>_</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20210729 13:17:23.949" level="INFO">${TEST_NAME} = IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed</msg>
-<status status="PASS" starttime="20210729 13:17:23.949" endtime="20210729 13:17:23.949"/>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<var>${TEST_DATA_PATH}</var>
-<arg>SEPARATOR=</arg>
-<arg>C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\${PATH_TO_POM}\\${TEST_NAME}.csv</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<msg timestamp="20210729 13:17:23.950" level="INFO">${TEST_DATA_PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv</msg>
-<status status="PASS" starttime="20210729 13:17:23.949" endtime="20210729 13:17:23.950"/>
-</kw>
-<msg timestamp="20210729 13:17:23.950" level="INFO">${PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv</msg>
-<status status="PASS" starttime="20210729 13:17:23.948" endtime="20210729 13:17:23.950"/>
-</kw>
-<kw name="Get CSV Data" library="DataManager">
-<var>${SIMPLE_FORM_DATA}</var>
-<arg>${PATH}</arg>
-<kw name="Read Csv File" library="csv_code">
-<var>${Data}</var>
-<arg>${FILE_PATH}</arg>
-<msg timestamp="20210729 13:17:23.952" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\InputForms\\InputFormSubmit\\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv'</msg>
-<status status="FAIL" starttime="20210729 13:17:23.951" endtime="20210729 13:17:23.953"/>
-</kw>
-<status status="FAIL" starttime="20210729 13:17:23.950" endtime="20210729 13:17:23.953"/>
-</kw>
-<status status="FAIL" starttime="20210729 13:17:23.947" endtime="20210729 13:17:23.953"/>
-</kw>
-<kw name="Navigate to &quot;Selenium Easy Test&quot; landing page" library="SeleniumApp">
-<doc>This Keyword reaches our Landing Page, and verifies that the PopUp Appears whenever it enters
-to the website</doc>
-<status status="NOT RUN" starttime="20210729 13:17:23.954" endtime="20210729 13:17:23.954"/>
-</kw>
-<kw name="Close Automation Message PopUp" library="LandingPage">
-<status status="NOT RUN" starttime="20210729 13:17:23.954" endtime="20210729 13:17:23.955"/>
-</kw>
-<kw name="Validate Page Loaded" library="LandingPage">
-<status status="NOT RUN" starttime="20210729 13:17:23.955" endtime="20210729 13:17:23.955"/>
-</kw>
-<kw name="Click on Input Forms from dropdown" library="LandingPage">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Click on Input Form Submit option" library="LandingPage">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Validate &quot;Input Form Submit&quot; page loaded" library="InputFormSubmit">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Fill Form without First Name" library="InputFormSubmit">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Fill Last Name" library="InputFormSubmit">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Fill Email" library="InputFormSubmit">
-<status status="NOT RUN" starttime="20210729 13:17:23.957" endtime="20210729 13:17:23.957"/>
-</kw>
-<kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210729 13:17:23.958" endtime="20210729 13:17:26.173"/>
-</kw>
-<status status="PASS" starttime="20210729 13:17:23.957" endtime="20210729 13:17:26.173"/>
-</kw>
-<doc>Validate that when user doesn't provide a first name in Input Form Submit
-Demo, the error "Please Supply your first name" is displayed below "First Name" field.</doc>
-<status status="FAIL" starttime="20210729 13:17:22.565" endtime="20210729 13:17:26.173">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\InputForms\\InputFormSubmit\\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv'</status>
-</test>
-<doc>This test suite validates Input Form Submit demo
-on Selenium Easy Test webpage</doc>
-<status status="FAIL" starttime="20210729 13:17:15.026" endtime="20210729 13:17:26.176"/>
+<doc>This demo suite provides test cases for the Simple Form Demo
+on Selenium Easy Test webpage.</doc>
+<status status="PASS" starttime="20210803 12:30:30.448" endtime="20210803 12:30:40.029"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">is displayed in "Your Message" label.</stat>
+<stat pass="1" fail="0" skip="0">SFD</stat>
 </tag>
 <suite>
-<stat pass="1" fail="1" skip="0" id="s1" name="Input Form Submit Test">Input Form Submit Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="SimpleFormDemoTest">SimpleFormDemoTest</stat>
 </suite>
 </statistics>
 <errors>
