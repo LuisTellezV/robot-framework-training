@@ -38,7 +38,7 @@ Input Invalid Data Into Two Input Fields
     ...    NaN is displayed in Total Label.
     [Arguments]    ${Input_Text}
     FOR    ${Row}    IN    @{Input_Text}
-        input text    ${SUM_A}
+        input text    ${SUM_A}    ${Row[0]}
         input text    ${SUM_B}    ${Row[1]}
         click element    ${GET_TOTAL_BUTTON}
         run keyword and continue on failure    wait until page contains    NaN
