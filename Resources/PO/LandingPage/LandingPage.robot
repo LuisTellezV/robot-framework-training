@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../../../Data/InputData.robot
 
 *** Variables ***
 ${SITE_NAME_ELEMENT} =    id:site-name
@@ -26,3 +27,12 @@ Click on Input Forms from dropdown
 
 Click on Input Form Submit option
     click link    ${INPUT_FORM_SUBMIT_SECTION}
+
+
+Go to "Simple Form Demo" Page
+    [Documentation]
+    ...    This Keyword navigates to "Simple Form Demo" and validates the page loaded.
+    click element    ${INPUT_FORMS_DROPDOWN}
+    wait until element is visible    ${DROPDOWN_MENU}
+    click link    ${SIMPLE_FORM_DEMO_LINK}
+    wait until page contains    Single Input Field

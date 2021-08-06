@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.2 (Python 3.8.6 on win32)" generated="20210729 13:17:15.024" rpa="false" schemaversion="2">
-<suite id="s1" name="Input Form Submit Test" source="C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\tests\inputforms\input_form_submit_test.robot">
-<test id="s1-t1" name="IFS_001 - Validate all fields are filled with String values - PostiveTestCase">
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210806 11:35:52.841" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\Axel Marruenda\repos\robot-framework-training\Tests">
+<suite id="s1-s1" name="InputForms" source="C:\Users\Axel Marruenda\repos\robot-framework-training\Tests\InputForms">
+<suite id="s1-s1-s1" name="SimpleFormDemoTest" source="C:\Users\Axel Marruenda\repos\robot-framework-training\Tests\InputForms\SimpleFormDemoTest.robot">
+<test id="s1-s1-s1-t1" name="SFD_002 - Two Input Fields Displays NaN on Invalid Input">
 <kw name="Begin Web Test" library="CommonWeb" type="SETUP">
 <doc>This Keyword help us setup all our test cases dynamically</doc>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210729 13:17:15.245" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210729 13:17:15.245" endtime="20210729 13:17:16.497"/>
+<msg timestamp="20210806 11:35:53.329" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210806 11:35:53.329" endtime="20210806 11:35:55.128"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210729 13:17:16.497" endtime="20210729 13:17:16.627"/>
+<status status="PASS" starttime="20210806 11:35:55.128" endtime="20210806 11:35:55.256"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:15.244" endtime="20210729 13:17:16.628"/>
+<status status="PASS" starttime="20210806 11:35:53.328" endtime="20210806 11:35:55.257"/>
 </kw>
 <kw name="Get Test Data" library="CommonWeb">
+<var>${Input_values}</var>
 <arg>${TEST_DATA_PATH}</arg>
 <kw name="Get Path for Test Data File" library="InputData">
 <var>${PATH}</var>
@@ -29,19 +32,19 @@
 <arg>${space}</arg>
 <arg>_</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20210729 13:17:16.631" level="INFO">${TEST_NAME} = IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase</msg>
-<status status="PASS" starttime="20210729 13:17:16.631" endtime="20210729 13:17:16.631"/>
+<msg timestamp="20210806 11:35:55.262" level="INFO">${TEST_NAME} = SFD_002_-_Two_Input_Fields_Displays_NaN_on_Invalid_Input</msg>
+<status status="PASS" starttime="20210806 11:35:55.261" endtime="20210806 11:35:55.262"/>
 </kw>
 <kw name="Catenate" library="BuiltIn">
 <var>${TEST_DATA_PATH}</var>
 <arg>SEPARATOR=</arg>
-<arg>C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\${PATH_TO_POM}\\${TEST_NAME}.csv</arg>
+<arg>C:\\Users\\Axel Marruenda\\repos\\robot-framework-training\\Data\\${PATH_TO_POM}\\${TEST_NAME}.csv</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<msg timestamp="20210729 13:17:16.631" level="INFO">${TEST_DATA_PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase.csv</msg>
-<status status="PASS" starttime="20210729 13:17:16.631" endtime="20210729 13:17:16.632"/>
+<msg timestamp="20210806 11:35:55.262" level="INFO">${TEST_DATA_PATH} = C:\Users\Axel Marruenda\repos\robot-framework-training\Data\InputForms\SimpleFormDemo\SFD_002_-_Two_Input_Fields_Displays_NaN_on_Invalid_Input.csv</msg>
+<status status="PASS" starttime="20210806 11:35:55.262" endtime="20210806 11:35:55.262"/>
 </kw>
-<msg timestamp="20210729 13:17:16.632" level="INFO">${PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_001_-_Validate_all_fields_are_filled_with_String_values_-_PostiveTestCase.csv</msg>
-<status status="PASS" starttime="20210729 13:17:16.629" endtime="20210729 13:17:16.632"/>
+<msg timestamp="20210806 11:35:55.262" level="INFO">${PATH} = C:\Users\Axel Marruenda\repos\robot-framework-training\Data\InputForms\SimpleFormDemo\SFD_002_-_Two_Input_Fields_Displays_NaN_on_Invalid_Input.csv</msg>
+<status status="PASS" starttime="20210806 11:35:55.259" endtime="20210806 11:35:55.262"/>
 </kw>
 <kw name="Get CSV Data" library="DataManager">
 <var>${SIMPLE_FORM_DATA}</var>
@@ -49,15 +52,16 @@
 <kw name="Read Csv File" library="csv_code">
 <var>${Data}</var>
 <arg>${FILE_PATH}</arg>
-<msg timestamp="20210729 13:17:16.634" level="INFO">${Data} = []</msg>
-<status status="PASS" starttime="20210729 13:17:16.633" endtime="20210729 13:17:16.634"/>
+<msg timestamp="20210806 11:35:55.269" level="INFO">${Data} = [['a', ' b'], ['1', ' a'], ['b', ' 1'], [' ', ''], [' ', ' 3'], ['3', ''], ['!', ' 1'], ['1', ' !'], ['!', ' #'], ['73', ' 7'], ['1', ' -5'], ['-5', ' -7'], ['-17', ' 20'], ['12.4', ' 3']]</msg>
+<status status="PASS" starttime="20210806 11:35:55.262" endtime="20210806 11:35:55.269"/>
 </kw>
-<msg timestamp="20210729 13:17:16.634" level="INFO">${SIMPLE_FORM_DATA} = []</msg>
-<status status="PASS" starttime="20210729 13:17:16.632" endtime="20210729 13:17:16.634"/>
+<msg timestamp="20210806 11:35:55.269" level="INFO">${SIMPLE_FORM_DATA} = [['a', ' b'], ['1', ' a'], ['b', ' 1'], [' ', ''], [' ', ' 3'], ['3', ''], ['!', ' 1'], ['1', ' !'], ['!', ' #'], ['73', ' 7'], ['1', ' -5'], ['-5', ' -7'], ['-17', ' 20'], ['12.4', ' 3']]</msg>
+<status status="PASS" starttime="20210806 11:35:55.262" endtime="20210806 11:35:55.269"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:16.628" endtime="20210729 13:17:16.634"/>
+<msg timestamp="20210806 11:35:55.270" level="INFO">${Input_values} = [['a', ' b'], ['1', ' a'], ['b', ' 1'], [' ', ''], [' ', ' 3'], ['3', ''], ['!', ' 1'], ['1', ' !'], ['!', ' #'], ['73', ' 7'], ['1', ' -5'], ['-5', ' -7'], ['-17', ' 20'], ['12.4', ' 3']]</msg>
+<status status="PASS" starttime="20210806 11:35:55.258" endtime="20210806 11:35:55.270"/>
 </kw>
-<kw name="Navigate to &quot;Selenium Easy Test&quot; landing page" library="SeleniumApp">
+<kw name="Go to &quot;Selenium Easy Test&quot; Landing Page" library="SeleniumApp">
 <doc>This Keyword reaches our Landing Page, and verifies that the PopUp Appears whenever it enters
 to the website</doc>
 <kw name="Navigate To" library="LandingPage">
@@ -65,180 +69,696 @@ to the website</doc>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210729 13:17:16.637" level="INFO">Opening url 'https://www.seleniumeasy.com/test/'</msg>
-<status status="PASS" starttime="20210729 13:17:16.636" endtime="20210729 13:17:18.695"/>
+<msg timestamp="20210806 11:35:55.273" level="INFO">Opening url 'https://www.seleniumeasy.com/test/'</msg>
+<status status="PASS" starttime="20210806 11:35:55.272" endtime="20210806 11:35:58.956"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:16.636" endtime="20210729 13:17:18.695"/>
+<status status="PASS" starttime="20210806 11:35:55.271" endtime="20210806 11:35:58.956"/>
 </kw>
 <kw name="Validate PopUp Appears" library="LandingPage">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${CLOSE_AUTOMATION_POPUP_BTN}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210729 13:17:18.695" endtime="20210729 13:17:19.848"/>
+<status status="PASS" starttime="20210806 11:35:58.957" endtime="20210806 11:36:00.015"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:18.695" endtime="20210729 13:17:19.848"/>
+<status status="PASS" starttime="20210806 11:35:58.957" endtime="20210806 11:36:00.015"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:16.635" endtime="20210729 13:17:19.848"/>
+<status status="PASS" starttime="20210806 11:35:55.270" endtime="20210806 11:36:00.016"/>
 </kw>
 <kw name="Close Automation Message PopUp" library="LandingPage">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${CLOSE_AUTOMATION_POPUP_BTN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210729 13:17:19.850" level="INFO">Clicking element 'id:at-cv-lightbox-close'.</msg>
-<status status="PASS" starttime="20210729 13:17:19.849" endtime="20210729 13:17:19.893"/>
+<msg timestamp="20210806 11:36:00.016" level="INFO">Clicking element 'id:at-cv-lightbox-close'.</msg>
+<status status="PASS" starttime="20210806 11:36:00.016" endtime="20210806 11:36:00.099"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:19.849" endtime="20210729 13:17:19.893"/>
+<status status="PASS" starttime="20210806 11:36:00.016" endtime="20210806 11:36:00.099"/>
 </kw>
 <kw name="Validate Page Loaded" library="LandingPage">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${SITE_NAME_ELEMENT}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20210729 13:17:19.894" endtime="20210729 13:17:19.912"/>
+<status status="PASS" starttime="20210806 11:36:00.102" endtime="20210806 11:36:00.122"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:19.893" endtime="20210729 13:17:19.913"/>
+<status status="PASS" starttime="20210806 11:36:00.101" endtime="20210806 11:36:00.122"/>
 </kw>
-<kw name="Click on Input Forms from dropdown" library="LandingPage">
+<kw name="Go to &quot;Simple Form Demo&quot; Page" library="LandingPage">
+<doc>This Keyword navigates to "Simple Form Demo" and validates the page loaded.</doc>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${INPUT_FORMS_OPTION}</arg>
+<arg>${INPUT_FORMS_DROPDOWN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210729 13:17:19.914" level="INFO">Clicking element 'xpath:(//li/a[contains(text(), 'Input Forms')])[1]'.</msg>
-<status status="PASS" starttime="20210729 13:17:19.914" endtime="20210729 13:17:19.966"/>
+<msg timestamp="20210806 11:36:00.123" level="INFO">Clicking element '//*[@id="navbar-brand-centered"]/ul[1]/li[1]/a'.</msg>
+<status status="PASS" starttime="20210806 11:36:00.123" endtime="20210806 11:36:00.194"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:19.913" endtime="20210729 13:17:19.967"/>
-</kw>
-<kw name="Click on Input Form Submit option" library="LandingPage">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${INPUT_FORM_SUBMIT_SECTION}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210729 13:17:19.968" level="INFO">Clicking link 'link:Input Form Submit'.</msg>
-<status status="PASS" starttime="20210729 13:17:19.968" endtime="20210729 13:17:20.326"/>
-</kw>
-<status status="PASS" starttime="20210729 13:17:19.968" endtime="20210729 13:17:20.326"/>
-</kw>
-<kw name="Validate &quot;Input Form Submit&quot; page loaded" library="InputFormSubmit">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${SITE_TITLE}</arg>
+<arg>${DROPDOWN_MENU}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210729 13:17:20.327" endtime="20210729 13:17:20.347"/>
+<status status="PASS" starttime="20210806 11:36:00.195" endtime="20210806 11:36:00.231"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:20.326" endtime="20210729 13:17:20.347"/>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${SIMPLE_FORM_DEMO_LINK}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:00.232" level="INFO">Clicking link 'css=ul[class*='nav'] li &gt; a[href='./basic-first-form-demo.html']'.</msg>
+<status status="PASS" starttime="20210806 11:36:00.232" endtime="20210806 11:36:00.729"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Single Input Field</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:00.729" endtime="20210806 11:36:00.757"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:00.123" endtime="20210806 11:36:00.757"/>
+</kw>
+<kw name="Input Invalid Data Into Two Input Fields" library="SimpleFormDemo">
+<arg>${Input_values}</arg>
+<doc>This Keyword inputs invalid text into Two Input Files Text Areas and validate
+NaN is displayed in Total Label.</doc>
+<for flavor="IN">
+<var>${CSV_Row}</var>
+<value>@{Input_Text}</value>
+<iter>
+<var name="${CSV_Row}">['a', ' b']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:00.764" level="INFO">${Expected_Output} = NaN</msg>
+<status status="PASS" starttime="20210806 11:36:00.762" endtime="20210806 11:36:00.764"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:00.768" level="INFO">Typing text 'a' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:00.764" endtime="20210806 11:36:00.898"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:00.900" level="INFO">Typing text ' b' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:00.898" endtime="20210806 11:36:01.031"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.032" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.031" endtime="20210806 11:36:01.110"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:01.111" endtime="20210806 11:36:01.127"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:01.111" endtime="20210806 11:36:01.127"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:00.761" endtime="20210806 11:36:01.127"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['1', ' a']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:01.131" level="INFO">${Expected_Output} = NaN</msg>
+<status status="PASS" starttime="20210806 11:36:01.128" endtime="20210806 11:36:01.131"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.134" level="INFO">Typing text '1' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.132" endtime="20210806 11:36:01.230"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.232" level="INFO">Typing text ' a' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.230" endtime="20210806 11:36:01.342"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.343" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.343" endtime="20210806 11:36:01.392"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:01.393" endtime="20210806 11:36:01.407"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:01.392" endtime="20210806 11:36:01.407"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:01.127" endtime="20210806 11:36:01.407"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['b', ' 1']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:01.411" level="INFO">${Expected_Output} = NaN</msg>
+<status status="PASS" starttime="20210806 11:36:01.408" endtime="20210806 11:36:01.411"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.413" level="INFO">Typing text 'b' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.411" endtime="20210806 11:36:01.519"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.520" level="INFO">Typing text ' 1' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.519" endtime="20210806 11:36:01.624"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.624" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.624" endtime="20210806 11:36:01.681"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:01.682" endtime="20210806 11:36:01.699"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:01.681" endtime="20210806 11:36:01.699"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:01.408" endtime="20210806 11:36:01.699"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">[' ', '']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:01.702" level="INFO">${Expected_Output} = NaN</msg>
+<status status="PASS" starttime="20210806 11:36:01.699" endtime="20210806 11:36:01.702"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.702" level="INFO">Typing text ' ' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.702" endtime="20210806 11:36:01.797"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.799" level="INFO">Typing text '' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.797" endtime="20210806 11:36:01.891"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.891" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.891" endtime="20210806 11:36:01.933"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:01.934" endtime="20210806 11:36:01.947"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:01.933" endtime="20210806 11:36:01.947"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:01.699" endtime="20210806 11:36:01.947"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">[' ', ' 3']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:01.948" level="INFO">${Expected_Output} = NaN</msg>
+<status status="PASS" starttime="20210806 11:36:01.948" endtime="20210806 11:36:01.948"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:01.948" level="INFO">Typing text ' ' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:01.948" endtime="20210806 11:36:02.048"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.050" level="INFO">Typing text ' 3' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.048" endtime="20210806 11:36:02.153"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.153" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.153" endtime="20210806 11:36:02.203"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:02.205" endtime="20210806 11:36:02.219"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:02.204" endtime="20210806 11:36:02.219"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:01.947" endtime="20210806 11:36:02.219"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['3', '']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:02.220" level="INFO">${Expected_Output} = NaN</msg>
+<status status="PASS" starttime="20210806 11:36:02.220" endtime="20210806 11:36:02.220"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.220" level="INFO">Typing text '3' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.220" endtime="20210806 11:36:02.314"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.316" level="INFO">Typing text '' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.314" endtime="20210806 11:36:02.406"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.408" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.406" endtime="20210806 11:36:02.452"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:02.453" endtime="20210806 11:36:02.468"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:02.452" endtime="20210806 11:36:02.468"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:02.219" endtime="20210806 11:36:02.468"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['!', ' 1']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:02.471" level="INFO">${Expected_Output} = NaN</msg>
+<status status="PASS" starttime="20210806 11:36:02.469" endtime="20210806 11:36:02.471"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.471" level="INFO">Typing text '!' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.471" endtime="20210806 11:36:02.577"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.578" level="INFO">Typing text ' 1' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.577" endtime="20210806 11:36:02.677"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.678" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.677" endtime="20210806 11:36:02.726"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:02.727" endtime="20210806 11:36:02.742"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:02.726" endtime="20210806 11:36:02.742"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:02.469" endtime="20210806 11:36:02.742"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['1', ' !']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:02.745" level="INFO">${Expected_Output} = NaN</msg>
+<status status="PASS" starttime="20210806 11:36:02.742" endtime="20210806 11:36:02.746"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.748" level="INFO">Typing text '1' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.746" endtime="20210806 11:36:02.854"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.854" level="INFO">Typing text ' !' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.854" endtime="20210806 11:36:02.945"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:02.946" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:02.945" endtime="20210806 11:36:02.990"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:02.990" endtime="20210806 11:36:03.006"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:02.990" endtime="20210806 11:36:03.006"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:02.742" endtime="20210806 11:36:03.006"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['!', ' #']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:03.008" level="INFO">${Expected_Output} = NaN</msg>
+<status status="PASS" starttime="20210806 11:36:03.008" endtime="20210806 11:36:03.008"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.012" level="INFO">Typing text '!' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.008" endtime="20210806 11:36:03.111"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.112" level="INFO">Typing text ' #' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.111" endtime="20210806 11:36:03.209"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.210" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.209" endtime="20210806 11:36:03.253"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:03.253" endtime="20210806 11:36:03.266"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:03.253" endtime="20210806 11:36:03.266"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:03.008" endtime="20210806 11:36:03.266"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['73', ' 7']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:03.268" level="INFO">${Expected_Output} = 80</msg>
+<status status="PASS" starttime="20210806 11:36:03.266" endtime="20210806 11:36:03.268"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.268" level="INFO">Typing text '73' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.268" endtime="20210806 11:36:03.369"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.371" level="INFO">Typing text ' 7' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.369" endtime="20210806 11:36:03.472"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.473" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.472" endtime="20210806 11:36:03.523"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:03.524" endtime="20210806 11:36:03.542"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:03.524" endtime="20210806 11:36:03.542"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:03.266" endtime="20210806 11:36:03.542"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['1', ' -5']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:03.547" level="INFO">${Expected_Output} = -4</msg>
+<status status="PASS" starttime="20210806 11:36:03.542" endtime="20210806 11:36:03.547"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.549" level="INFO">Typing text '1' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.547" endtime="20210806 11:36:03.645"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.648" level="INFO">Typing text ' -5' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.646" endtime="20210806 11:36:03.750"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.751" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.751" endtime="20210806 11:36:03.791"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:03.792" endtime="20210806 11:36:03.810"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:03.791" endtime="20210806 11:36:03.810"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:03.542" endtime="20210806 11:36:03.810"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['-5', ' -7']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:03.813" level="INFO">${Expected_Output} = -12</msg>
+<status status="PASS" starttime="20210806 11:36:03.810" endtime="20210806 11:36:03.813"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.815" level="INFO">Typing text '-5' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.813" endtime="20210806 11:36:03.918"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:03.922" level="INFO">Typing text ' -7' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:03.919" endtime="20210806 11:36:04.025"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:04.026" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:04.025" endtime="20210806 11:36:04.078"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:04.079" endtime="20210806 11:36:04.101"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:04.079" endtime="20210806 11:36:04.101"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:03.810" endtime="20210806 11:36:04.102"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['-17', ' 20']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:04.102" level="INFO">${Expected_Output} = 3</msg>
+<status status="PASS" starttime="20210806 11:36:04.102" endtime="20210806 11:36:04.102"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:04.102" level="INFO">Typing text '-17' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:04.102" endtime="20210806 11:36:04.212"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:04.214" level="INFO">Typing text ' 20' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:04.212" endtime="20210806 11:36:04.309"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:04.310" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:04.309" endtime="20210806 11:36:04.365"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:04.366" endtime="20210806 11:36:04.385"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:04.365" endtime="20210806 11:36:04.385"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:04.102" endtime="20210806 11:36:04.385"/>
+</iter>
+<iter>
+<var name="${CSV_Row}">['12.4', ' 3']</var>
+<kw name="Get Expected Output" library="input_data_verifier">
+<var>${Expected_Output}</var>
+<arg>${CSV_Row[0]}</arg>
+<arg>${CSV_Row[1]}</arg>
+<msg timestamp="20210806 11:36:04.387" level="INFO">${Expected_Output} = 15</msg>
+<status status="PASS" starttime="20210806 11:36:04.385" endtime="20210806 11:36:04.387"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_A}</arg>
+<arg>${CSV_Row[0]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:04.388" level="INFO">Typing text '12.4' into text field 'css=input[id=sum1]'.</msg>
+<status status="PASS" starttime="20210806 11:36:04.388" endtime="20210806 11:36:04.491"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SUM_B}</arg>
+<arg>${CSV_Row[1]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:04.493" level="INFO">Typing text ' 3' into text field 'css=input[id=sum2]'.</msg>
+<status status="PASS" starttime="20210806 11:36:04.492" endtime="20210806 11:36:04.597"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${GET_TOTAL_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210806 11:36:04.598" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Get Total')]'.</msg>
+<status status="PASS" starttime="20210806 11:36:04.597" endtime="20210806 11:36:04.650"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>wait until page contains</arg>
+<arg>${Expected_Output}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${Expected_Output}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210806 11:36:04.651" endtime="20210806 11:36:04.672"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:04.650" endtime="20210806 11:36:04.673"/>
+</kw>
+<status status="PASS" starttime="20210806 11:36:04.385" endtime="20210806 11:36:04.673"/>
+</iter>
+<status status="PASS" starttime="20210806 11:36:00.760" endtime="20210806 11:36:04.673"/>
+</for>
+<status status="PASS" starttime="20210806 11:36:00.759" endtime="20210806 11:36:04.673"/>
 </kw>
 <kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
 <kw name="Close All Browsers" library="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210729 13:17:20.348" endtime="20210729 13:17:22.563"/>
+<status status="PASS" starttime="20210806 11:36:04.675" endtime="20210806 11:36:06.992"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:20.347" endtime="20210729 13:17:22.563"/>
+<status status="PASS" starttime="20210806 11:36:04.674" endtime="20210806 11:36:06.992"/>
 </kw>
-<status status="PASS" starttime="20210729 13:17:15.244" endtime="20210729 13:17:22.564"/>
+<doc>Validate NaN message is displayed on Total Label when non numeric
+values are inputed.</doc>
+<tag>2</tag>
+<tag>SFD</tag>
+<status status="PASS" starttime="20210806 11:35:53.326" endtime="20210806 11:36:06.994"/>
 </test>
-<test id="s1-t2" name="IFS_002 - Validate Please Supply your First Name error is displayed">
-<kw name="Begin Web Test" library="CommonWeb" type="SETUP">
-<doc>This Keyword help us setup all our test cases dynamically</doc>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210729 13:17:22.566" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210729 13:17:22.566" endtime="20210729 13:17:23.827"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210729 13:17:23.827" endtime="20210729 13:17:23.947"/>
-</kw>
-<status status="PASS" starttime="20210729 13:17:22.566" endtime="20210729 13:17:23.947"/>
-</kw>
-<kw name="Get Test Data" library="CommonWeb">
-<arg>${TEST_DATA_PATH}</arg>
-<kw name="Get Path for Test Data File" library="InputData">
-<var>${PATH}</var>
-<arg>${DIRECTORY_NAME}</arg>
-<arg>${TEST_NAME}</arg>
-<kw name="Replace String" library="String">
-<var>${TEST_NAME}</var>
-<arg>${TEST_NAME}</arg>
-<arg>${space}</arg>
-<arg>_</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20210729 13:17:23.949" level="INFO">${TEST_NAME} = IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed</msg>
-<status status="PASS" starttime="20210729 13:17:23.949" endtime="20210729 13:17:23.949"/>
-</kw>
-<kw name="Catenate" library="BuiltIn">
-<var>${TEST_DATA_PATH}</var>
-<arg>SEPARATOR=</arg>
-<arg>C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\${PATH_TO_POM}\\${TEST_NAME}.csv</arg>
-<doc>Catenates the given items together and returns the resulted string.</doc>
-<msg timestamp="20210729 13:17:23.950" level="INFO">${TEST_DATA_PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv</msg>
-<status status="PASS" starttime="20210729 13:17:23.949" endtime="20210729 13:17:23.950"/>
-</kw>
-<msg timestamp="20210729 13:17:23.950" level="INFO">${PATH} = C:\Users\Luis Tellez\PycharmProjects\robot-framework-training\Data\InputForms\InputFormSubmit\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv</msg>
-<status status="PASS" starttime="20210729 13:17:23.948" endtime="20210729 13:17:23.950"/>
-</kw>
-<kw name="Get CSV Data" library="DataManager">
-<var>${SIMPLE_FORM_DATA}</var>
-<arg>${PATH}</arg>
-<kw name="Read Csv File" library="csv_code">
-<var>${Data}</var>
-<arg>${FILE_PATH}</arg>
-<msg timestamp="20210729 13:17:23.952" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\InputForms\\InputFormSubmit\\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv'</msg>
-<status status="FAIL" starttime="20210729 13:17:23.951" endtime="20210729 13:17:23.953"/>
-</kw>
-<status status="FAIL" starttime="20210729 13:17:23.950" endtime="20210729 13:17:23.953"/>
-</kw>
-<status status="FAIL" starttime="20210729 13:17:23.947" endtime="20210729 13:17:23.953"/>
-</kw>
-<kw name="Navigate to &quot;Selenium Easy Test&quot; landing page" library="SeleniumApp">
-<doc>This Keyword reaches our Landing Page, and verifies that the PopUp Appears whenever it enters
-to the website</doc>
-<status status="NOT RUN" starttime="20210729 13:17:23.954" endtime="20210729 13:17:23.954"/>
-</kw>
-<kw name="Close Automation Message PopUp" library="LandingPage">
-<status status="NOT RUN" starttime="20210729 13:17:23.954" endtime="20210729 13:17:23.955"/>
-</kw>
-<kw name="Validate Page Loaded" library="LandingPage">
-<status status="NOT RUN" starttime="20210729 13:17:23.955" endtime="20210729 13:17:23.955"/>
-</kw>
-<kw name="Click on Input Forms from dropdown" library="LandingPage">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Click on Input Form Submit option" library="LandingPage">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Validate &quot;Input Form Submit&quot; page loaded" library="InputFormSubmit">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Fill Form without First Name" library="InputFormSubmit">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Fill Last Name" library="InputFormSubmit">
-<status status="NOT RUN" starttime="20210729 13:17:23.956" endtime="20210729 13:17:23.956"/>
-</kw>
-<kw name="Fill Email" library="InputFormSubmit">
-<status status="NOT RUN" starttime="20210729 13:17:23.957" endtime="20210729 13:17:23.957"/>
-</kw>
-<kw name="End Web Test" library="CommonWeb" type="TEARDOWN">
-<kw name="Close All Browsers" library="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" starttime="20210729 13:17:23.958" endtime="20210729 13:17:26.173"/>
-</kw>
-<status status="PASS" starttime="20210729 13:17:23.957" endtime="20210729 13:17:26.173"/>
-</kw>
-<doc>Validate that when user doesn't provide a first name in Input Form Submit
-Demo, the error "Please Supply your first name" is displayed below "First Name" field.</doc>
-<status status="FAIL" starttime="20210729 13:17:22.565" endtime="20210729 13:17:26.173">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Luis Tellez\\PycharmProjects\\robot-framework-training\\Data\\InputForms\\InputFormSubmit\\IFS_002_-_Validate_Please_Supply_your_First_Name_error_is_displayed.csv'</status>
-</test>
-<doc>This test suite validates Input Form Submit demo
-on Selenium Easy Test webpage</doc>
-<status status="FAIL" starttime="20210729 13:17:15.026" endtime="20210729 13:17:26.176"/>
+<doc>This demo suite provides test cases for the Simple Form Demo
+on Selenium Easy Test webpage.</doc>
+<status status="PASS" starttime="20210806 11:35:52.891" endtime="20210806 11:36:06.999"/>
+</suite>
+<status status="PASS" starttime="20210806 11:35:52.886" endtime="20210806 11:36:07.007"/>
+</suite>
+<status status="PASS" starttime="20210806 11:35:52.845" endtime="20210806 11:36:07.013"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">2</stat>
+<stat pass="1" fail="0" skip="0">SFD</stat>
 </tag>
 <suite>
-<stat pass="1" fail="1" skip="0" id="s1" name="Input Form Submit Test">Input Form Submit Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="InputForms">Tests.InputForms</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="SimpleFormDemoTest">Tests.InputForms.SimpleFormDemoTest</stat>
 </suite>
 </statistics>
 <errors>
