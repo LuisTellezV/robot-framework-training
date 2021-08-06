@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    PO/LandingPage/LandingPage.robot
-Resource    PO/SimpleForm/SimpleFormDemo.robot
 Resource    ../Data/InputData.robot
 
 *** Variables ***
@@ -13,5 +12,3 @@ Go to "Selenium Easy Test" Landing Page
     ...     to the website
     LandingPage.Navigate To    ${BASE_URL}
     LandingPage.Validate PopUp Appears
-
-

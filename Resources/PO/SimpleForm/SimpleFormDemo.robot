@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../../../Data/InputData.robot
+Library    ../../../CustomLibs/input_data_verifier.py
 
 *** Variables ***
 ${SIMPLE_FORM_DEMO_LINK} =    css=ul[class*='nav'] li > a[href='./basic-first-form-demo.html']
@@ -14,14 +14,6 @@ ${GET_TOTAL_BUTTON} =    xpath=//button[contains(text(), 'Get Total')]
 ${TOTAL_LABEL} =   xpath=//label[contains(text(), 'Total')]
 
 *** Keywords ***
-Go to "Simple Form Demo" Page
-    [Documentation]
-    ...    This Keyword navigates to "Simple Form Demo" and validates the page loaded.
-    click element    ${INPUT_FORMS_DROPDOWN}
-    wait until element is visible    ${DROPDOWN_MENU}
-    click link    ${SIMPLE_FORM_DEMO_LINK}
-    wait until page contains    Single Input Field
-
 Input Text in User Message Text Area
     [Documentation]
     ...    This Keyword inputs text into Text Area and validate the message label displays it.
@@ -32,18 +24,15 @@ Input Text in User Message Text Area
         run keyword and continue on failure    wait until page contains    ${Row}
     END
 
-Input Invalid Data Into Two Input Fields
+Input Data Into Two Input Fields
     [Documentation]
     ...    This Keyword inputs invalid text into Two Input Files Text Areas and validate
     ...    NaN is displayed in Total Label.
     [Arguments]    ${Input_Text}
-    FOR    ${Row}    IN    @{Input_Text}
-        input text    ${SUM_A}    ${Row[0]}
-        input text    ${SUM_B}    ${Row[1]}
+    FOR    ${CSV_Row}    IN    @{Input_Text}
+        ${Expected_Output} =   get expected output    ${CSV_Row[0]}    ${CSV_Row[1]}
+        input text    ${SUM_A}    ${CSV_Row[0]}
+        input text    ${SUM_B}    ${CSV_Row[1]}
         click element    ${GET_TOTAL_BUTTON}
-        run keyword and continue on failure    wait until page contains    NaN
+        run keyword and continue on failure    wait until page contains    ${Expected_Output}
     END
-
-# ${In_a} =    convert to number    ${Row[0]}
-#        ${In_b} =    convert to number    ${Row[1]}
-#        ${Total} =      evaluate    ${In_a} + ${In_b}
